@@ -1,8 +1,32 @@
-<?php
-// на какие данные рассчитан этот скрипт
-header("Content-Type: application/json");
-// разбираем JSON-строку на составляющие встроенной командой
-$data = json_decode(file_get_contents("php://input"));
-// отправляем в ответ строку с подтверждением
-echo "Сервер получил следующие данные: имя — $data->name, фамилия — $data->lastname";
-?>
+{
+  "todos": [
+    {
+      "id": "1",
+      "text": "Eat",
+      "completed": true,
+      "meta": {
+        "author": "John",
+        "createdAt": "today"
+      }
+    },
+    {
+      "id": "2",
+      "text": "Code",
+      "completed": true,
+      "meta": {
+        "author": "Jane",
+        "createdAt": "yesterday"
+      }
+    },
+    {
+      "id": "3",
+      "text": "Sleep",
+      "completed": false
+    },
+    {
+      "id": "4",
+      "text": "Repeat",
+      "completed": false
+    }
+  ]
+}
